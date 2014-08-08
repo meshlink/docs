@@ -11,6 +11,7 @@ Check that all requirements are met. Everthing should be green.
 
 ```sudo lxc-checkconfig```
 
+## Additional Debian Requirements
 If you're running debian and not Ubuntu, you'll have to set mount cgroups manually.
 
 Add the following to ```/etc/fstab```:
@@ -18,14 +19,24 @@ Add the following to ```/etc/fstab```:
 ```none		/sys/fs/cgroup	cgroup	defaults	0	0```
 
 Then mount:
+
 ```mount /sys/fs/cgroup```
 
 Run ```sudo lxc-checkconfig``` again to confirm.
+
 Reference material for this can be found on the [Debian Wiki](https://wiki.debian.org/LXC).
 
 # Set Up Virtual Network
 
-## Create Bridge Adapter
+## Ubuntu: Things Magically Work
+
+TODO
+
+## Debian: Create Bridge Adapter
+
+**This doesn't work, but almost works. Update this document is you figure it out.**
+
+Debian requires some extra setup for the network interface.
 
 Add the following to you ```/etc/network/interfaces```:
 
